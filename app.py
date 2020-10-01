@@ -29,6 +29,7 @@ def convert_to(currency, value):
 
 #================================================================
 app = Flask(__name__)
+create_csv()
 
 @app.route('/', methods=['GET', 'POST'])
 def calculate():
