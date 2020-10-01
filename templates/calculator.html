@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+
+        <title>Calculator</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <div class="jumbotron text-center"><h1>Kalkulator walut</h1></div>
+        </div>
+
+        <div class="container shadow border p-4">
+            <form action="" method="POST">
+
+                <div class="row">
+                    <div class="col-2">
+                        <select name="currency" class="btn border dropdown-toggle">
+                            <div class="dropdown-menu">
+                                <option class="dropdown-item">USD</option>
+                                <option class="dropdown-item">AUD</option>
+                                <option class="dropdown-item">CAD</option>
+                                <option class="dropdown-item">EUR</option>
+                                <option class="dropdown-item">HUF</option>
+                                <option class="dropdown-item">CHF</option>
+                                <option class="dropdown-item">GBP</option>
+                                <option class="dropdown-item">JPY</option>
+                                <option class="dropdown-item">CZK</option>
+                                <option class="dropdown-item">DKK</option>
+                                <option class="dropdown-item">NOK</option>
+                                <option class="dropdown-item">SEK</option>
+                                <option class="dropdown-item">XDR</option>
+                            </div>
+                        </select>
+                    </div>
+                
+                    <div class="col">
+                        <input name="value" type="number" class="form-control" placeholder="Kwota">
+                    </div>
+
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary btn-block">Przelicz</button>
+                    </div> 
+                </div>
+
+                {% if value  %}
+                <br>
+
+                <div class="container border rounded text-center">
+                    <div class="row">
+                        <div class="col-3 align-self-center">
+                            <h5>{{value}} {{currency}}</h5>
+                        </div>
+
+                        <div class="col">
+                            <div class="row align-self-center">
+                                <div class="col">   <label for="bid">Cena kupna:</label>    </div>
+                                <div class="col">   <samp id="bid">{{bid}} PLN</samp>       </div>
+                            </div>
+                            <div class="row align-self-center">
+                                <div class="col">   <label for="ask">Cena sprzedarzy:</label>   </div>
+                                <div class="col">   <samp id="ask">{{ask}} PLN</samp>           </div>
+                            </div>  
+                        </div>
+                    </div>                    
+                </div>
+                {% endif %}
+
+            </form>
+        </div>
+
+    </body>
+</html>
