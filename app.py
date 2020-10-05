@@ -76,6 +76,9 @@ def calculate():
                     result = convert_pln_to(convert, value)
                 else:
                     result = convert_to_pln(currency, value)
+
+                    if convert != 'PLN':
+                        result = convert_pln_to(convert, result)
             else:
                 result = value
 
